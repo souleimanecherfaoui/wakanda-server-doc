@@ -1,0 +1,22 @@
+{
+  "name": "wakanda-server-doc",
+  "version": "1.0.0",
+  "description": "Wakanda Server Documentation",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^2.1.0",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "scripts": {
+    "gulp-serve": "node ./node_modules/gulp/bin/gulp.js serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wakanda/wakanda-server-doc"
+  },
+  "author": "Wakanda SAS"
+}

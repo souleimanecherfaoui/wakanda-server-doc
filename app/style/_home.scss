@@ -1,0 +1,65 @@
+.feature-block {
+  text-align: center;
+  margin-bottom: 40px;
+  height: 320px;
+
+  h3 {
+    color: #373737;
+    margin: 10px;
+  }
+
+  img {
+    display: inline-block;
+  }
+
+  p {
+    font-size: 1.1em;
+    text-align: center;
+  }
+}
+
+.jumbotron {
+  background: url('../images/banner.png') top center;
+
+  p {
+    text-align: center;
+  }
+}
+
+#downloadButton {
+  background: #373737;
+  color: white;
+
+
+}
+
+#downloadButton:hover {
+  background: darken(#373737, 10%);
+}
+
+#quickstartButton {
+  background: $brand-primary;
+  color:white;
+}
+
+#quickstartButton:hover {
+  background: darken($brand-primary, 10%);
+}
+
+.aa-dropdown-menu {
+  position: absolute;
+  right: 0px !important;
+  left: auto !important;
+
+  .algolia-docsearch-suggestion--highlight {
+    color: $brand-primary;
+  }
+
+  .algolia-docsearch-suggestion--category-header {
+    background-color: $navbar-bg-color;
+  }
+
+  .aa-cursor .algolia-docsearch-suggestion, .aa-cursor .algolia-docsearch-suggestion--content {
+    color: #333;
+  }
+}

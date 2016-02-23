@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <div ng-if="isPrevLink">
+      <a href="{{prevLink.url}}">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        {{prevLink.name}}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 text-right">
+    <div ng-if="isNextLink">
+      <a href="{{nextLink.url}}">
+        {{nextLink.name}}
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+</div>

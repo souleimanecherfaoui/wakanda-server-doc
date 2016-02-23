@@ -1,0 +1,162 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar {
+  background: $navbar-bg-color;
+
+  .navbar-brand {
+    color: #EAEAEA !important;
+    text-shadow: 1px 1px darken(#EAEAEA, 80%);
+  }
+
+  a {
+    color: darken(#EAEAEA, 10%) !important;
+    text-shadow: 1px 1px darken(#EAEAEA, 80%);
+  }
+
+  a:hover {
+    color: #FFFFFF !important;
+  }
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+
+  > .form-control-feedback {
+    line-height: 42px;
+  }
+}
+.nav-sidebar > li > .nav-sidebar {
+  padding-left: 40px;
+  padding-right: 20px;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  background-color: #E9E9E9;
+}
+.nav-sidebar > li > a:hover,
+.nav-sidebar > li > a:focus {
+  background-color: #EAEAEA !important;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: $brand-primary !important;
+  text-shadow: 1px 1px darken($brand-primary, 20%);
+}
+
+/**
+ * Footer
+ */
+#footer {
+  min-height: 80px;
+  background: #373737;
+  padding: 15px;
+  font-size: 0.9em;
+
+  a {
+    color: #acacac;
+    text-shadow: 1px 1px black;
+  }
+
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 2px;
+    margin-bottom: 0;
+  }
+
+  li {
+    padding-bottom: 2px;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: white;
+    font-size: 22px;
+    text-shadow: 1px 1px black;
+  }
+
+  .row > div:first-child {
+    text-align: center;
+  }
+
+  img {
+    margin-top: 5px;
+    max-height: 150px;
+  }
+}
+
+/*
+ * Main content
+ */
+.main {
+  padding: 40px;
+  .page-header {
+    margin-top: 0;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,17 @@
+<div ng-controller="sidebarController">
+  <ul class="nav nav-sidebar">
+    <li ng-repeat="link in menuLinks" ng-class="{active: isLinkActive(link)}">
+      <a href="{{link.url}}">
+        {{link.name}}
+        <span ng-if="hasArrow(link)" class="glyphicon glyphicon-chevron-down form-control-feedback" aria-hidden="true"></span>
+      </a>
+      <ul ng-if="showSubList(link)" class="nav nav-sidebar">
+        <li ng-repeat="sublink in link.children" ng-class="{active: isLinkActive(sublink)}">
+          <a href="{{sublink.url}}">
+            {{sublink.name}}
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
