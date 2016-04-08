@@ -28,15 +28,27 @@ angular.module('wakanda-server-doc')
       //page property must equals to the part after #/doc/ or after #/doc/the_parent_page/
       return [
         {
-          name: 'First page',
-          url: '#/doc/first-page',
-          page: 'first-page',
+          name: 'Overview',
+          url: '#/doc/overview',
+          page: 'overview',
           children: [
             {
-              name: 'First children',
-              url: '#/doc/first-page/first-children',
-              parentPage: 'first-page',
-              page: 'first-children'
+              name: 'Bootstrap',
+              url: '#/doc/overview/bootstrap',
+              parentPage: 'overview',
+              page: 'bootstrap'
+            },
+            {
+              name: 'Modules',
+              url: '#/doc/overview/modules',
+              parentPage: 'overview',
+              page: 'modules'
+            },
+            {
+              name: 'Services',
+              url: '#/doc/overview/services',
+              parentPage: 'overview',
+              page: 'services'
             }
           ]
         }
