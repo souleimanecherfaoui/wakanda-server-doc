@@ -1,0 +1,60 @@
+<h1>Services</h1>
+
+<h2>What is it</h2>
+
+<p>
+    <ul>
+        <li>A service is a Wakanda <a href="#/doc/overview/modules">module</a>.</li>
+        <li>Every service should export a function called <code>postMessage</code>.</li>
+        <li>The <code>postMessage</code> function is called whenever one of a predefined list of events will or did occur.</li>
+    </ul>
+</p>
+
+<h2>How to</h2>
+
+<p>
+    The folder <code>backend/modules</code> inside your Wakanda project contains a default service called <code>service.js</code>.
+    
+    All services are notified whenever one of this list of events occurs :
+    
+    <ul>
+        <li>
+            <b>applicationWillStart</b> : 
+            The project is being started. It's the first message sent to the service
+        </li>
+        <li>
+            <b>applicationWillStop</b> : 
+            The project is being closed
+        </li>
+        <li>
+            <b>httpServerDidStart</b> : 
+            The Wakanda HTTP Server is being started
+        </li>
+        <li>
+            <b>httpServerWillStop</b> : 
+            The Wakanda HTTP Server is being closed
+        </li>
+        <li>
+            <b>catalogWillReload</b> : 
+            The datastore model is being reloaded on the server
+        </li>
+        <li>
+            <b>catalogDidReload</b> : 
+            The datastore model has been reloaded on the server
+        </li>
+    </ul>
+    
+    Here is an example of a service adding an HTTP pattern <code>/ping</code> for monitoring purposes :
+     
+    <snippets path="documentation/snippets/overview/services/" files="['service.js', 'handlers.js']"></snippets>
+</p>
+
+<p>
+    To define a new service for your project, right click on a module file in the solution explorer and click on <code>Set as Service</code>.
+    <div>
+        <img src="/documentation/images/set_as_service.png" alt="Set a file as service inside Wakanda Studio" class="img-responsive">
+    </div> 
+</p>
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
+

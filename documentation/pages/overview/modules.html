@@ -1,0 +1,27 @@
+<h1>Modules</h1>
+
+<h2>What is it</h2>
+
+<p>
+    <ul>
+        <li>A JavaScript file that you can use to expose properties or functions for later use in your application.</li>
+        <li>Modules can help making your code modular and reusable.</li>
+        <li>Wakanda modules follow the CommonJS standard. ( The same as NodeJS )</li>
+    </ul>
+</p>
+
+<h2>How to</h2>
+
+<p>
+    The folder <code>backend/modules</code> inside your Wakanda project is where you usually create your modules. It contains a default module file <code>module.js</code>.
+    
+    <snippets path="documentation/snippets/overview/modules/" files="['test.js', 'logger.js']"></snippets>
+    
+    As the example above shows, to import the content of an existing module defined inside the <code>modules</code> folder of your backend,
+    we simply use the function <code>require</code> with a string identifying the path to the module we want to use.
+</p>
+
+
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="wakanda-server-doc">
+
+<head>
+  <meta charset="utf-8">
+  <title>Wakanda Server Documentation</title>
+
+  <link rel="icon" href="./images/favicon.ico" />
+
+  <link rel="stylesheet" href="./style/application.build.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" /> -->
+</head>
+
+<body>
+  <div ng-include="'navbar/navbar.html'"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div ng-if="displaySidebar" class="col-sm-3 col-md-2 sidebar" ng-include="'sidebar/sidebar.html'"></div>
+      <div ng-class="mainContainerClass" ui-view></div>
+    </div>
+    <div class="row">
+      <div id="footer" ng-class="mainContainerClass" ng-include="'footer/footer.html'"></div>
+    </div>
+  </div>
+
+  <script src="./lib/jquery/dist/jquery.min.js"></script>
+  <script src="./lib/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="./lib/prism/prism.js"></script>
+  <script src="./lib/angular-snippets/dist/angular-snippets.min.js"></script>
+  <script src="./lib/angular-snippets/dist/themes/bootstrap-buttons/theme.min.js"></script>
+
+  <script src="./app.js"></script>
+  <script src="./documentation/documentationFactory.js"></script>
+  <script src="./documentation/documentationController.js"></script>
+  <script src="./documentation/docPagination.directive.js"></script>
+  <script src="./documentation/prismDirective.js"></script>
+  <script src="./navbar/navbarController.js"></script>
+  <script src="./sidebar/sidebarController.js"></script>
+  <script src="./home/homeController.js"></script>
+
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script> -->
+
+</body>
+
+</html>
