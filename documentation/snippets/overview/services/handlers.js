@@ -1,5 +1,5 @@
-function pingHandler(request, response){
+function statusHandler(request, response){
     response.statusCode = 200;
     
-    return "pong";
+    return "ok";
 }

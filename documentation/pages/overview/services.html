@@ -13,9 +13,9 @@
 <h2>How to</h2>
 
 <p>
-    The folder <code>backend/modules</code> inside your Wakanda project contains a default service called <code>service.js</code>.
+    The folder <code>backend/modules</code> inside your Wakanda project contains a default service called <code>service-example</code>.
     
-    All services are notified whenever one of this list of events occurs :
+    <p>All services are notified whenever one of this list of events occurs :</p>
     
     <ul>
         <li>
@@ -44,9 +44,11 @@
         </li>
     </ul>
     
-    Here is an example of a service adding an HTTP pattern <code>/ping</code> for monitoring purposes :
+    <p>
+        Here is an example of a service adding an HTTP pattern <code>/status</code> for monitoring purposes :
+    </p>
      
-    <snippets path="documentation/snippets/overview/services/" files="['service.js', 'handlers.js']"></snippets>
+    <snippets path="documentation/snippets/overview/services/" files="['index.js', 'handlers.js']"></snippets>
 </p>
 
 <p>
