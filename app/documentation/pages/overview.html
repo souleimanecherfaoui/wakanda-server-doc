@@ -1,33 +1,40 @@
+<style>
+    .list>li{
+        padding-top: 10px;
+    }
+</style>
 <h1>Wakanda Server Overview</h1>
 
 <p>
     Wakanda Server is a multi-threaded server. The most important components of the server are :
-    <ul>
+    <ul class="list">
         <li>
             JavaScript Application Server
             <ul>
-                <li>V8 as JavaScript runtime</li>
-                <li>Rich API to handle filesystem, sockets, HTTP Requests, internal or remote databases, workers..</li>
+                <li>Uses V8 as JavaScript runtime</li>
+                <li>Exposes a rich API to handle filesystem, sockets, HTTP Requests, internal or remote databases, workers..</li>
                 <li>Since Wakanda SSJS is different than NodeJS' SSJS, you can use the NodeWorker API to start and use a NodeJS thread inside Wakanda Server</li>
-                <li>Debugger based on Chrome DevTools to debug the different running JavaScript contexts (one context per thread)</li>
-            </ul>            
+                <li>Provides a debugger based on Chrome DevTools to debug the different running JavaScript contexts (one context per thread)</li>
+            </ul>
         </li>
         <li>
             Wakanda HTTP Server
             <ul>
                 <li>Serves static HTTP files for your applications</li>
-                <li>Exposes internal or remote databases through a default secure REST API</li>
+                <li>Used by other server components to expose Wakanda's REST API</li>
                 <li>Can be used by your application's SSJS code to add custom HTTP patterns..</li>
             </ul>
         </li>  
         <li>
             Data Abstraction Layer
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Handles the connection with data-sources (internal WakandaDB or remote databases)</li>
+                <li>Exposes a rich JavaScript API to access and manipualte data</li>
+                <li>Provides events associated to data manipulation</li>
+                <li>Secures access to data</li>
+                <li>Exposes an automatically generated REST API to access and manipulate data</li>
             </ul>
-        </li>      
+        </li>
         <li>
             WakandaDB (Internal DataBase)
             <ul>
@@ -39,13 +46,12 @@
         <li>
             Directory
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Handles users/groups and sessions management as well as authentication</li>
+                <li>Exposes a Server Side JavaScript API</li>
+                <li>Exposes a REST API</li>
             </ul>
         </li>
     </ul>
 </p>
 <img src="./documentation/images/architecture.png" alt="Wakanda Server Architecture" class="img-responsive">
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
-

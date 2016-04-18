@@ -1,5 +1,5 @@
 /*
- * A service that adds a ping http endpoint
+ * A service that adds a status http endpoint
  * to check if the server is alive for monitoring purposes
  */
 exports.postMessage = function(message) {
@@ -10,15 +10,15 @@ exports.postMessage = function(message) {
     switch(message.name){
         case "httpServerDidStart":
             /*
-                - Add ping request handler
+                - Add status request handler
             */
-            httpServer.addRequestHandler("^/ping", handlerFile.path, "pingHandler");
+            httpServer.addRequestHandler("^/status", handlerFile.path, "statusHandler");
             break;
         case "httpServerWillStop":
             /*
-                - Remove ping request handler
+                - Remove status request handler
             */
-            httpServer.removeRequestHandler("^/ping", handlerFile.path, "pingHandler");
+            httpServer.removeRequestHandler("^/status", handlerFile.path, "statusHandler");
             break;
     }
 }
