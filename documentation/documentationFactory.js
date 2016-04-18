@@ -33,6 +33,18 @@ angular.module('wakanda-server-doc')
           page: 'overview',
           children: [
             {
+              name: 'Solution',
+              url: '#/doc/overview/solution',
+              parentPage: 'overview',
+              page: 'solution'
+            },
+            {
+              name: 'Project',
+              url: '#/doc/overview/project',
+              parentPage: 'overview',
+              page: 'project'
+            },
+            {
               name: 'Bootstrap',
               url: '#/doc/overview/bootstrap',
               parentPage: 'overview',
@@ -49,6 +61,31 @@ angular.module('wakanda-server-doc')
               url: '#/doc/overview/services',
               parentPage: 'overview',
               page: 'services'
+            }
+          ]
+        },
+        {
+          name: 'Authentication',
+          url: '#/doc/authentication',
+          page: 'authentication',
+          children: [
+            {
+              name: 'Default Mechanism',
+              url: '#/doc/authentication/default',
+              parentPage: 'authentication',
+              page: 'default'
+            },
+            {
+              name: 'Custom Authentication',
+              url: '#/doc/authentication/custom',
+              parentPage: 'authentication',
+              page: 'custom'
+            },
+            {
+              name: 'OAuth2 and OpenID Connect',
+              url: '#/doc/authentication/oauth-openid-connect',
+              parentPage: 'authentication',
+              page: 'oauth-openid-connect'
             }
           ]
         }
