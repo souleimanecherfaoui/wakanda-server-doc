@@ -82,10 +82,10 @@ angular.module('wakanda-server-doc')
               page: 'custom'
             },
             {
-              name: 'OAuth2 and OpenID Connect',
-              url: '#/doc/authentication/oauth-openid-connect',
+              name: 'Custom Session Management',
+              url: '#/doc/authentication/custom-session-management',
               parentPage: 'authentication',
-              page: 'oauth-openid-connect'
+              page: 'custom-session-management'
             }
           ]
         }

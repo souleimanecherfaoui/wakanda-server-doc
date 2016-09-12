@@ -1,4 +1,4 @@
-var logger = require("logger");
+var logger = require("module-example");
 
 logger.error("This is an error !");
 
