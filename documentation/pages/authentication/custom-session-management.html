@@ -1,5 +1,34 @@
 <h1>Custom Session Management</h1>
 
+<p>
+    By default, Wakanda handles user sessions and ensures :
 
+    <ul>
+        <li>the creation and in-memory persistence of session information</li>
+        <li>the auto-removal of expired sessions</li>
+        <li>the handling of SSJS session APIs</li>
+    </ul>
+
+    In your app, you might need to have full control over those aspects. Here are some use case examples :
+
+    <ul>
+        <li>You want to use multiple Wakanda Server instances behind a load balancer and need to share sessions across the servers</li>
+        <li>You want to use a different way than cookies to keep users authenticated (<code>JWT</code> for instance)</li>
+        <li>You want to log user login/logout activity</li>
+    </ul>
+</p>
+
+<h2>How to</h2>
+
+<p>
+    In order to override the default session handling, you need to call the <code>directory.setSessionManager</code> function and pass in the name
+    of your Wakanda SSJS module that will handle all session operations.
+
+    <snippets path="documentation/snippets/authentication/custom-session-management/" files="['init.js', 'session-manager-storage.js']"></snippets>
+
+    <div class="bs-callout bs-callout-info">
+        You would usually call <code>directory.setSessionManager</code> during the initialization of your project using a <a href="#/doc/overview/bootstrap">BootStrap</a> or a <a href="#/doc/overview/services">Service</a>.
+    </div>
+</p>
 
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
