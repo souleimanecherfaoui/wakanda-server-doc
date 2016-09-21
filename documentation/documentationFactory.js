@@ -65,6 +65,43 @@ angular.module('wakanda-server-doc')
           ]
         },
         {
+          name: 'Data Integration',
+          url: '#/doc/data',
+          page: 'data',
+          children : [
+            {
+              name: 'Basics',
+              url: '#/doc/data/basics',
+              parentPage: 'data',
+              page: 'basics'
+            },
+            {
+              name: 'Client side',
+              url: '#/doc/data/client-side',
+              parentPage: 'data',
+              page: 'client-side'
+            },
+            {
+              name: 'Server Side',
+              url: '#/doc/data/server-side',
+              parentPage: 'data',
+              page: 'server-side'
+            },
+            {
+              name: 'Security',
+              url: '#/doc/data/security',
+              parentPage: 'data',
+              page: 'security'
+            },
+            {
+              name: 'Adding external data sources',
+              url: '#/doc/data/adding-data-sources',
+              parentPage: 'data',
+              page: 'adding-data-sources'
+            }
+          ]
+        },
+        {
           name: 'Authentication',
           url: '#/doc/authentication',
           page: 'authentication',
