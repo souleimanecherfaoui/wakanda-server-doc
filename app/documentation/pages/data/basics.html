@@ -1,0 +1,185 @@
+<h1>Basics</h1>
+
+<p>
+    Whether you are using WakandaDB, an external database or a webservice, we don't use the word Table to describe how a business
+    entity is defined. Instead, we use the word DataClass.
+</p>
+
+<h2>DataClass and Entity</h2>
+<ul>
+    <li>A <b>DataClass</b> is a description of a business entity or concept needed in your application.</li>
+    <li>An <b>Entity</b> is an instance of a DataClass.</li>
+</ul>
+
+Instead of manipulating rows you'll be manipulating entities (JavaScript Objects).
+
+<h2>Creating your data model</h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bAxmyD26R6Q" frameborder="0" allowfullscreen></iframe>
+
+<p>
+    <br>
+    <img src="./documentation/images/company_employee_model.png" alt="Company Employee Model" class="img-responsive">
+</p>
+
+<p>
+    In the <code>Employee</code> DataClass, <code>company</code> is a relation attribute of type <code>Company</code> representing
+    that every employee in the app works for a specific company. The attribute <code>employees</code> in the <code>Company</code>    DataClass is a collection of <code>Employee</code> entities.
+</p>
+
+<div class="bs-callout bs-callout-info">
+    Once you create and save your model using the model editor, the server automatically generates a REST API to do basic CRUD
+    and even advanced operations (pagination, method calls..). <br> You can already start the server and switch to the
+    <a href="#/doc/data/client-side">client side</a> section to learn how to access data from the client side.
+</div>
+
+<h3>Attributes</h3>
+
+An attribute is an object that stores information or represents a value in the datastore class. <br> Attributes are by default
+<b>scalar</b> but you can choose to make an attribute <b>calculated</b> if you need its value to be calculated using code.
+
+<h4>Scalar attributes types</h4>
+
+<button data-toggle="collapse" data-target="#attribute-types" class="btn">Show/Hide attribute types table</button>
+
+<div id="attribute-types" class="collapse">
+    <table class="table table-bordered table-hover">
+        <tr>
+            <td><strong>Data Type</strong></td>
+            <td><strong>Icon</strong></td>
+            <td><strong>Description</strong></td>
+            <td><strong>Value Range</strong></td>
+        </tr>
+        <tr>
+            <td>blob</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673298/pict673298.en.png"></td>
+            <td>A "binary large object" containing binary data.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>bool</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673301/pict673301.en.png"></td>
+            <td>A Boolean value: either true or false.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>byte</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673303/pict673303.en.png"></td>
+            <td>A sequence of 8 bits.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673305/pict673305.en.png"></td>
+            <td>If the <strong>Date only</strong> property is selected for this attribute type, the date value will include only
+                the "MM/DD/YYYY" format (e.g., "10/05/2010"). Otherwise, the date value including the time, stored in UTC.
+                The date is expressed in the following format: YYYY-MM-DDTHH:MM:ss.SSSZ (e.g., "2010-10-05T23:00:00.000Z"
+                for October 5, 2010 in the Central European Timezone). SSS, which represent the milliseconds, which can be
+                between 0 to 999, has been added to the date in the Dev Branch.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>duration</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673307/pict673307.en.png"></td>
+            <td>A duration between two dates</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673309/pict673309.en.png"></td>
+            <td>A reference to an image file or an actual image.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>long</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673311/pict673311.en.png"></td>
+            <td>A whole number, greater than or equal to a standard number</td>
+            <td>-2,147,483,648 to 2,147,483,647</td>
+        </tr>
+        <tr>
+            <td>long64</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673313/pict673313.en.png"></td>
+            <td>A whole number, greater than or equal to a standard number</td>
+            <td>-9,223,372,036,854,775,808 to +9,223,372,036,854,775,807</td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673315/pict673315.en.png"></td>
+            <td>A numeric value, corresponding either to a Real, and Integer or Long Integer.</td>
+            <td>±1.7e±308 (real), -32,768 to 32,767 (integer), -2^31 to (2^31)-1 (long)</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673317/pict673317.en.png"></td>
+            <td>A sequence of characters.</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>uuid</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673319/pict673319.en.png"></td>
+            <td>Universally Unique Identifier: a 16 bytes (128 bits) number containing 32 hexadecimal characters</td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>word</td>
+            <td><img style="max-width:100%;" alt="" src="http://cdn.livedoc.wakanda.org/dynpict31346/picture/673321/pict673321.en.png"></td>
+            <td>A 16-bit signed integer</td>
+            <td>-32767 to 32768</td>
+        </tr>
+    </table>
+</div>
+
+
+<h4>Calculated attributes</h4>
+
+<p>
+    A calculated attribute is a named property with a data type that masks a calculation.
+</p>
+
+<ul>
+    <li>It requires at least the <code>OnGet</code> method to be defined</li>
+    <li>The value of the attribute is not stored</li>
+    <li>If the attribute is not accessed the <code>OnGet</code> method will not be called</li>
+    <li>Inside calculated attribute methods(OnGet, OnSet..) <code>this</code> represents the current entity</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ng8vjGJX0o8" frameborder="0" allowfullscreen></iframe>
+
+<div class="bs-callout bs-callout-info">
+    You can learn more about attributes by visiting the <a target="_blank" href="http://livedoc.wakanda.org/Wakanda-Server-Side-Concepts/Attributes.200-715321.en.html">doc-center</a>.
+</div>
+
+
+<h3>Methods</h3>
+
+<p>
+    Datastore class methods allow you to execute code that can be applied to a DataClass, an entity collection, or an
+    individual entity.
+    <ul>
+        <li>Inside a <code>collection</code> method <code>this</code> represents the collection who's method was called</li>
+        <li>Inside an <code>entity</code> method <code>this</code> represents the current entity who's method was called</li>
+    </ul>
+</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eWB7TjUMvfw" frameborder="0" allowfullscreen></iframe>
+
+<h3>DataClass Events</h3>
+
+<h3>Attribute Events</h3>
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
+
+<style>
+    /* Icon when the collapsible content is shown */
+    
+    .btn:after {
+        font-family: "Glyphicons Halflings";
+        content: "\e114";
+        float: right;
+        margin-left: 15px;
+    }
+    /* Icon when the collapsible content is hidden */
+    
+    .btn.collapsed:after {
+        content: "\e080";
+    }
+</style>
