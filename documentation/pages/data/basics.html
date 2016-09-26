@@ -141,6 +141,7 @@ An attribute is an object that stores information or represents a value in the d
     <li>The value of the attribute is not stored</li>
     <li>If the attribute is not accessed the <code>OnGet</code> method will not be called</li>
     <li>Inside calculated attribute methods(OnGet, OnSet..) <code>this</code> represents the current entity</li>
+    <li>If you don't define the OnQuery method and use the attribute in a query on large data, expect latency</li>
 </ul>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ng8vjGJX0o8" frameborder="0" allowfullscreen></iframe>
@@ -153,8 +154,8 @@ An attribute is an object that stores information or represents a value in the d
 <h3>Methods</h3>
 
 <p>
-    Datastore class methods allow you to execute code that can be applied to a DataClass, an entity collection, or an
-    individual entity.
+    Datastore class methods allow you to execute code that can be applied to a DataClass, an entity collection, or an individual
+    entity.
     <ul>
         <li>Inside a <code>collection</code> method <code>this</code> represents the collection who's method was called</li>
         <li>Inside an <code>entity</code> method <code>this</code> represents the current entity who's method was called</li>
@@ -162,9 +163,108 @@ An attribute is an object that stores information or represents a value in the d
 </p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eWB7TjUMvfw" frameborder="0" allowfullscreen></iframe>
 
-<h3>DataClass Events</h3>
+<h3>Events</h3>
 
-<h3>Attribute Events</h3>
+<p>
+    In addition to dataclass methods that are executed when called, Wakanda provides a series of events on both entities and
+    attributes that can trigger specific code to execute. Not to be confused with the On Get, On Set, On Sort, and On Query
+    methods of a calculated attributed, events are available on all attributes and datastore classes.
+</p>
+
+<div class="bs-callout bs-callout-info">
+    For both dataclass and attribute events, <code>this</code> points to the entity.
+</div>
+
+<h4>DataClass Events</h4>
+
+<p>
+    Class events operate on whole entities and are triggered by particular conditions. The following are datastore class level
+    events:
+</p>
+
+<button data-toggle="collapse" data-target="#dataclass-events" class="btn">Show/Hide DataClass Events</button>
+
+<div id="dataclass-events" class="collapse">
+    <table class="table table-bordered table-hover">
+        <tbody>
+            <tr>
+                <td><strong>Event</strong></td>
+                <td><strong>Description</strong></td>
+            </tr>
+            <tr>
+                <td><em>On Init</em></td>
+                <td>Executes when a new entity comes into being after all auto sequence values are assigned.</td>
+            </tr>
+            <tr>
+                <td><em>On Load</em></td>
+                <td>Executes just after an entity is accessed from the datastore but before it is delivered to the calling routine.</td>
+            </tr>
+            <tr>
+                <td><em>On Validate</em></td>
+                <td>Executes when an entity is saved but before the <em>On Save</em> event and can fail the validation if needed.</td>
+            </tr>
+            <tr>
+                <td><em>On Save</em></td>
+                <td>Executes before an entity is saved and can stop the save if needed.</td>
+            </tr>
+            <tr>
+                <td><em>On Remove</em></td>
+                <td>Executes before an entity is deleted and can stop the deletion if needed.</td>
+            </tr>
+            <tr>
+                <td><em>On Restricting Query</em></td>
+                <td>Executes when entities are accessed and returns an entity collection that represents all entities in the
+                    dataclass
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4>Attribute Events</h4>
+
+<p>
+    <button data-toggle="collapse" data-target="#attribute-events" class="btn">Show/Hide Attribute Events</button>
+
+    <div id="attribute-events" class="collapse">
+        <table class="table table-bordered table-hover">
+            <tbody>
+                <tr>
+                    <td><strong>Event</strong></td>
+                    <td><strong>Description</strong></td>
+                </tr>
+                <tr>
+                    <td><em>On Init</em></td>
+                    <td>Executes when a new entity comes into being but after the entity’s <em>On Init</em> event.</td>
+                </tr>
+                <tr>
+                    <td><em>On Load</em></td>
+                    <td>Executes the first time the attribute is accessed after the entity is loaded. If the attribute is not
+                        accessed, this event is not executed.</td>
+                </tr>
+                <tr>
+                    <td><em>On Set</em></td>
+                    <td>Executes after an attribute’s value is set. In server-side code, this executes when the value is set.
+                        When an attribute is set in client-side code, this event executes when the entity is saved or the
+                        method <em>serverRefresh</em> is called, but only for each attribute that was modified.</td>
+                </tr>
+                <tr>
+                    <td><em>On Validate</em></td>
+                    <td>Executes just before the entity’s <em>On Validate</em> event executes and can fail the validation if
+                        needed.</td>
+                </tr>
+                <tr>
+                    <td><em>On Save</em></td>
+                    <td>Executes just before the entity’s <em>On Save</em> event executes and can stop the save if needed.</td>
+                </tr>
+                <tr>
+                    <td><em>On Remove</em></td>
+                    <td>Executes just before the entity’s <em>On Remove</em> event and can stop the deletion if needed.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</p>
 
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
 
