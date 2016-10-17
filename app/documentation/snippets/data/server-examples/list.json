@@ -1,0 +1,32 @@
+[
+	{
+		"fName" : "Atomic",
+		"lName" : "Samurai",
+		"dob"   : "01/01/1979",
+		"photo" : "atomic_samurai.png"
+	},
+	{
+		"fName" : "Superalloy",
+		"lName" : "Darkshine",
+		"dob"   : "01/01/1989",
+		"photo" : "superalloy.png"
+	},
+	{
+		"fName" : "Child",
+		"lName" : "Emperor",
+		"dob"   : "01/01/2006",
+		"photo" : "child_emperor.png"
+	},
+	{
+		"fName" : "Metal",
+		"lName" : "Bat",
+		"dob"   : "01/01/1999",
+		"photo" : "metal_bat.png"
+	},
+	{
+		"fName" : "Flashy",
+		"lName" : "Flash",
+		"dob"   : "01/01/1991",
+		"photo" : "flashy.png"
+	}
+]
