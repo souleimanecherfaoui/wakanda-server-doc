@@ -1,0 +1,11 @@
+<div ng-controller="TodoController">
+	<p>Number of tasks : {{tasks.length}}</p>
+	<ul>
+		<li ng-repeat="task in tasks">
+			{{task.label}}
+			<span ng-if="task.done">
+				[done]
+			</span>
+		</li>
+	</ul>
+</div>
