@@ -1,1 +1,39 @@
+<h1>Client Side Data Access & Manipulation</h1>
+
+<p>
+	You can perform multiple operations from the client side :
+
+	<ul>
+		<li><b>C</b>reate/<b>R</b>ead/<b>U</b>pdate/<b>D</b>elete entities (CRUD operations)</li>
+		<li>Call entity/dataclass/collection methods</li>
+		<li>Authenticate users and get user information</li>
+	</ul>
+
+	Any events declared on the server side are also called if the associated event was triggered by one of the performed operations.
+
+	<div class="bs-callout bs-callout-info">
+		All data manipulation operations are restricted to authorized users. You can learn more about the subject in the <a href="#/doc/data/security">security</a>		section.
+	</div>
+</p>
+
+<h2>Client Side Connectors</h2>
+
+<p>
+	The following client side connectors are available and maintained by Wakanda:
+	<ul>
+		<li><a target="_blank" href="https://github.com/Wakanda/wakanda-javascript-client#readme">Wakanda-JavaScript-Client</a> to be used
+			for any JavaScript project(Angular2, Aurelia, React, Vanilla JS..)</li>
+		<li><a target="_blank" href="https://wakanda.github.io/angular-wakanda/#/doc/quickstart">Angular-Wakanda</a> connector to be
+			used for Angular 1 projects (based on Wakanda-JavaScript-Client)</li>
+	</ul>
+</p>
+
+<h4>Wakanda JavaScript Client File Upload Example</h4>
+
+<snippets path="documentation/snippets/data/cs-wjsc" files="['example.js']"></snippets>
+
+<h4>Angular Wakanda Example</h4>
+
+<snippets path="documentation/snippets/data/cs-angular" files="['index.html','app.js']"></snippets>
+
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

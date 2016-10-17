@@ -1,5 +1,72 @@
+<h1>Server Side Data Manipulation</h1>
+
 <p>
-    The Data Abstration Layer gives you the ability to handle data the same way regardless of where it comes from.
+    The Data Abstration Layer gives you the ability to handle data the same way regardless of where it comes from (built-in DB, MySQL, ODBC..).    
 </p>
+
+<p>
+    In this section, we will work on the following data model :
+    <br><br>    
+    <img src="./documentation/images/company_employee_model.png" alt="Company Employee Model" class="img-responsive">
+</p>
+
+<div class="bs-callout bs-callout-warning">
+    Knowing <a href="#/doc/miscellaneous?scrollTo=run-code-examples">how to run code examples</a> and <a href="#/doc/miscellaneous?scrollTo=use-backend-debugger">how to use the backend code debugger</a> is a prerequesite.
+</div>
+
+<h2>The datastore API</h2>
+
+On the server-side, <code>ds</code> represents your application's datastore that contains all your dataclasses.
+
+<img src="./documentation/images/ds-dataclasses.png" alt="ds objects contains a property for every dataclass" class="img-responsive">
+
+<h3>Creating new entities</h3>
+
+<ul>
+    <li>The example <code>001</code> shows how to create a new Company, a new Employee and attach the Employee to the created Company.</li>
+    <li>The example <code>002</code> shows how to import data from a JSON file to the database.</li>
+</ul>
+
+<snippets path="documentation/snippets/data/server-examples/" files="['001-creating-entities.js', '002-creating-entities.js','list.json']"></snippets>
+
+After running the example you can check the following URLs :
+
+<ul>
+    <li><code>http://127.0.0.1:8081/rest/Company</code> to get the list of companies</li>
+    <li><code>http://127.0.0.1:8081/rest/Company(1)/employees?$expand=employees</code> to get the list of employees of the company with <code>ID</code> 1</li>
+    <li><code>http://127.0.0.1:8081/rest/Employee(1)/photo?$imageformat=best&$version=1&$expand=photo</code> to display the photo of the employee with <code>ID</code> 1</li>
+</ul>
+
+<h3>Finding entities</h3>
+
+<snippets path="documentation/snippets/data/server-examples/" files="['003-query-find.js']"></snippets>
+
+<div class="bs-callout bs-callout-info">
+    Find out more about <a target="_blank" href="http://livedoc.wakanda.org/Datastore/Introduction/Defining-Queries-Server-side.300-575260.en.html">query syntax</a>.
+</div>
+
+<h3>Manipulating collections</h3>
+
+<snippets path="documentation/snippets/data/server-examples/" files="['004-collections.js']"></snippets>
+
+<div class="bs-callout bs-callout-info">
+    Find out more about collections by visiting the <a target="_blank" href="https://wakanda.github.io/wakanda-api-reference/docs/interfaces/entitycollection.html">EntityCollection API reference</a>.
+</div>
+
+<h3>Calling methods</h3>
+
+<ul>
+    <li>
+        If you have added a collection method to your DataClass <code>Employee</code> it'll be available on all collections of Employee entities.
+    </li>
+    <li>
+        If you have added an entity method to your DataClass <code>Employee</code> it'll be available on all Employee entities.
+    </li>
+    <li>
+        If you have defined a DataClass method to the DataClass <code>Employee</code> it'll be only available on the DataClass <code>ds.Employee.methodName()</code>.
+    </li>
+</ul>
+
+<snippets path="documentation/snippets/data/server-examples/" files="['005-methods.js']"></snippets>
 
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

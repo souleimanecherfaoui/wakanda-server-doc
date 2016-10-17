@@ -125,6 +125,11 @@ angular.module('wakanda-server-doc')
               page: 'custom-session-management'
             }
           ]
+        },
+        {
+          name: 'Miscellaneous',
+          url: '#/doc/miscellaneous',
+          page: 'miscellaneous'
         }
       ];
     }

@@ -16,14 +16,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
       controller: 'homeController'
     })
     .state('documentation', {
-      url: '/doc/{page}',
+      url: '/doc/{page}?scrollTo=',
       templateUrl: function ($stateParams) {
         return 'documentation/pages/' + $stateParams.page + '.html';
       },
       controller: 'documentationController'
     })
     .state('documentationSubPage', {
-      url: '/doc/{page}/{subpage}',
+      url: '/doc/{page}/{subpage}?scrollTo=',
       templateUrl: function ($stateParams) {
         return 'documentation/pages/' + $stateParams.page + '/' + $stateParams.subpage +'.html';
       },
@@ -31,7 +31,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     });
 });
 
-app.run(function($rootScope, $state, documentationFactory, $window) {
+app.run(function($rootScope, $state, documentationFactory, $window, $location, $anchorScroll) {
 
   $rootScope.$on("$stateChangeStart",
     function (event, toState, toParams, fromState, fromParams) {
@@ -52,7 +52,14 @@ app.run(function($rootScope, $state, documentationFactory, $window) {
         }
     });
 
-  $rootScope.$on('$stateChangeSuccess',function(){
-    $window.scrollTo(0,0);
+  $rootScope.$on('$stateChangeSuccess',function(){    
+    if($state.params.scrollTo){
+      $location.hash($state.params.scrollTo);
+      $anchorScroll();  
+    }else{
+      $window.scrollTo(0,0);
+    }
   });
 });
+
+
