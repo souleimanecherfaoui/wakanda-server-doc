@@ -6068,3 +6068,6 @@ img.illustration {
 .bs-callout-info {
   background-color: #f0f7fd;
   border-color: #d0e3f0; }
+
+.top-padding {
+  padding-top: 30px; }
