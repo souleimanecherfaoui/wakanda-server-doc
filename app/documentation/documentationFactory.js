@@ -126,6 +126,11 @@ angular.module('wakanda-server-doc')
             }
           ]
         },
+         {
+          name: 'HTTP',
+          url: '#/doc/http',
+          page: 'http'
+        },
         {
           name: 'Miscellaneous',
           url: '#/doc/miscellaneous',

@@ -1,0 +1,40 @@
+<h1>HTTP</h1>
+
+<h2>Extending the REST API</h2>
+
+<ul>
+    <li>
+        You can add your own HTTP endpoints by using the <code>addHTTPRequestHandler</code> API.
+    </li>
+    <li>
+        You can do that at your application's startup by using a
+        <code><a href="#/doc/overview/bootstrap">bootstrap</a></code> or a 
+        <code><a href="#/doc/overview/services">service</a></code>
+    </li>
+</ul>
+
+<p>
+    This is an example using the default <code>bootstrap</code> file :
+</p>
+
+<snippets path="documentation/snippets/http/" files="['bootstrap.js', 'handler.js']"></snippets>
+
+<div class="bs-callout bs-callout-info">
+    For a more advanced example you can visit <a target="_blank" href="https://github.com/hamzahik/wakanda-directory">this Github repository</a>.
+</div>
+
+<h2>HTTP Server Configuration</h2>
+
+You can configure your HTTP server's settings by openning your project settings file <code>/PROJECT/backend/settings</code>.<br/><br/>
+
+<p>
+    This is an example showing how to enable and configure CORS :
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ljUN7qu2QIQ" frameborder="0" allowfullscreen></iframe>
+
+<p>
+    You can also edit the http section of your waSettings file to configure CORS :    
+</p>
+
+<snippets path="documentation/snippets/misc/" files="['cors.xml']"></snippets>
