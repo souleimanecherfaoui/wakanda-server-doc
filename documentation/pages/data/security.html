@@ -1,1 +1,27 @@
+<h1>Security</h1>
+
+<h2>DataClasses : Public VS Public On Server</h2>
+
+<ul>
+    <li>A dataclass is by default <code>public</code>, this means it is exposed via the default REST API.</li>
+    <li>A <code>public on server</code> dataclass is not exposed via REST and can only be accessed using server side code.</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MjkAD5l2NA4" frameborder="0" allowfullscreen></iframe>
+
+<h2>Securing Public DataClasses</h2>
+
+<h3>Restricting CRUD operations to specific user groups</h3>
+
+<ul>
+    <li><a href="#/doc/authentication/default">Create the user groups</a> that reflect your permission model (Employees, HR..)</li>
+    <li>In the model editor restrict CRUD operations to the specified group</li>
+</ul>
+
+<p>
+    If we want to restrict updating, removing and creating new Employee and Company Entities to the <code>Moderators</code> group, we can do the following :
+</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5RmWBhdCSyI" frameborder="0" allowfullscreen></iframe>
+
 <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
