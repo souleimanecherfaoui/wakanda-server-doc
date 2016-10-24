@@ -3,4 +3,4 @@
  * You can use it  to initialize your application, define HTTP pattern handlers etc..
  */
 
-httpServer.addRequestHandler("^/me", "/backend/handler.js", "myHandler");
+httpServer.addRequestHandler("^/me", "./backend/handler.js", "myHandler");
