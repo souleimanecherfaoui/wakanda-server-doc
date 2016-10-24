@@ -4,6 +4,8 @@ function myHandler(request, response){
      */
 
     response.statusCode = 200; //the default value
+    
+    response.headers["my-header"] = "something"; // and request.headers to access the request headers   
 
     response.body = "My Response"; //You can also simply use return "My Response"
 }
