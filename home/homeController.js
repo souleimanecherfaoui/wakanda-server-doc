@@ -4,10 +4,28 @@ angular.module('wakanda-server-doc')
   .controller('homeController', function ($scope) {
     var sections = [
       {
-        name: 'Data Integration',
-        description: 'Wakanda has an efficient relational data model, that allows you to work seamlessly with any datasource.',
-        imageUrl: './images/datamodel.png',
+        name: 'OVERVIEW',
+        description: '',
+        imageUrl: './images/overview.png',
+        link: '#/doc/overview'
+      },
+      {
+        name: 'DATA INTEGRATION',
+        description: '',
+        imageUrl: './images/data.png',
         link: '#/doc/data'
+      },
+      {
+        name: 'AUTHENTICATION',
+        description: '',
+        imageUrl: './images/authentication.png',
+        link: '#/doc/authentication'
+      },
+      {
+        name: 'HTTP',
+        description: '',
+        imageUrl: './images/http.png',
+        link: '#/doc/http'
       }
     ];
     $scope.sections = sections;

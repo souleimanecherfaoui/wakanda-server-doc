@@ -1,17 +1,58 @@
 <div class="jumbotron">
   <div class="container">
-    <h1 class="text-center">Wakanda Server Documentation</h1>
+    <h1 class="text-center">Wakanda Documentation</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-6 col-md-4 feature-block" ng-repeat="section in sections">
-    <a ng-href="{{section.link}}">
-      <img ng-src="{{section.imageUrl}}">
+  <div ng-repeat="section in sections" class="home-section col-xs-12 col-sm-6 col-md-3">
+    <a ng-href="{{section.link}}" class="home-section-link">
+      <div class="home-section-head"></div>
+      <div class="home-section-content">
+        <img ng-src="{{section.imageUrl}}">
+        <div>
+          {{section.name}}
+        </div>
+      </div>
     </a>
-    <h3>{{section.name}}</h3>
-    <p>
-      {{section.description}}
-    </p>    
   </div>
 </div>
+
+<style>
+  .home-section{
+    margin-bottom:15px;
+  }
+  .home-section a[href]{
+    text-decoration: none;
+    color: #555555;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #555555;
+    font-weight: 700;      
+    text-align: center;
+  }
+
+  .home-section:hover .home-section-head{
+    background-color: #ffb800;
+    color: #fff;
+  }
+  .home-section:hover .home-section-content{
+    border-bottom: 3px solid #ffb800;
+  }
+  .home-section-content{
+    margin-left: auto;
+    margin-right: auto;      
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fafafa;
+  }  
+  .home-section-head{
+    background-color: #f3f3f3;
+    height:50px;
+  }
+  .home-section-content img{    
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+</style>
