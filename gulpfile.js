@@ -23,7 +23,7 @@ gulp.task('webserver', ['sass'], function() {
   gulp.src(paths.app.src)
     .pipe(webserver({
       port: 9001,
-      livereload: false,
+      livereload: true,
       open: true
     }));
 });

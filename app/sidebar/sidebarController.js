@@ -21,6 +21,10 @@ angular.module('wakanda-server-doc')
     $scope.showSubList = function (link) {
       return $stateParams.page === link.page && link.children && link.children.length > 0;
     };
+    
+    $scope.showSubList2 = function (link, sublink) {
+      return $stateParams.page === link.page && sublink.children && sublink.children.length > 0;
+    };
 
     $scope.hasArrow = function (link) {
       return link.children && link.children.length > 0;

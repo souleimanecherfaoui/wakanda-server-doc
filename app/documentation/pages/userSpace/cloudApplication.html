@@ -1,0 +1,51 @@
+<style>
+    .list>li{
+        padding-top: 10px;
+    }
+</style>
+<h1 id="wakanda-user-space">Cloud Application</h1>
+<h2 id="general-view">Groups view</h2>
+<p>The groups view allows you to manage your application groups.</p>
+<p>Two group categories are supported : <a href="/#/doc/userSpace/cloudApplication/cloud-wakanda">Wakanda Group</a> and <a href="/#/doc/userSpace/cloudApplication/cloud-rds">RDS Group</a>.</p>
+<p>Wakanda group is the default group created with your application. While the RDS Group could be added to any non Free application by clicking on the <strong><code>Add 3rd-party DB</code></strong> button.</p>
+<p><img src="./documentation/images/add-rds.png" /></p>
+<h2 id="profiles-view">Profiles view</h2>
+<p>The profiles view offers you a way to work in a collaborative mode by creating groups, inviting users and managing their permissions.</p>
+<h3 id="creating-a-group">Creating a group</h3>
+<p>You can create a new group by clicking on the <strong><code>Add Group</code></strong> button</p>
+<p><img src="./documentation/images/add-group.png" /></p>
+<div class="bs-callout bs-callout-info">
+    The <strong><code>Owner</code></strong> group is created automatically with every application. The only user it contains is the application’s owner.</a>
+</div>
+<p>The pop-up that shows up allows you to:</p>
+<ul>
+<li>Set a name for the group.</li>
+<li>Type the emails of the collaborators in the <strong><code>Users</code></strong> section.</li>
+<li>Set custom permissions for the group.</li>
+</ul>
+<p>Click on the <strong><code>save</code></strong> button to create the group</p>
+<p><img src="./documentation/images/permissions.png" /></p>
+<h3 id="managing-users">Managing users</h3>
+<p>On the users panel, you can add or remove collaborators from a selected group. To add a new user to a group, click on the <strong><code>Manage Users</code></strong> button or on the <strong><code>Add users to the group</code></strong> link if the group does not contain any users yet.</p>
+<p><img src="./documentation/images/manage-users.png" /></p>
+<p>Type in the user’s email and click on <strong><code>Invite</code></strong> or, if the user is also a collaborator in one of your other groups, select him/her from the shown list.</p>
+<p><img src="./documentation/images/manage-invite.png"/></p>
+<p>You can also delete a user from a group by clicking on the <strong><code>X</code></strong> button in the user panel or in the manage users view by deselecting him/her.</p>
+<h3 id="configuring-group-permissions">Configuring group permissions</h3>
+<p>You can configure group permissions by clicking on the <img class="inline" src="./documentation/images/19_permission_button.png"> button.</p>
+<p>A predefined list of permissions appears where you can select/deselect the permissions you want to attribute to the group and then save the changes.</p>
+<h3 id="deleting-a-group">Deleting a group</h3>
+<p>You delete a group by simply clicking on the <strong><code>X</code></strong> button next to the group name.</p>
+<div class="bs-callout bs-callout-warning">
+    You should delete all users in a group before deleting it.</a>
+</div>
+<h2 id="recent-operations-view">Recent Operations View</h2>
+<p>The recent actions you or your collaborators have executed (update permissions, publish app, download logs ...) are displayed in this view.</p>
+<p><img src="./documentation/images/groups-recent-operations.png" /></p>
+
+<h2 id="domains-view">Domains view</h2>
+<p>If you have purchased domain names from a registrar, and you want it bound to your application, you simply have to add them in the custom domains section. To do so, you enter a custom domain in the corresponding field and then click on the <strong><code>Add</code></strong> button</p>
+<p><img src="./documentation/images/custom-domain-field.png" /></p>
+<p>The custom domain will be automatically added to the list of your application’s custom domains.</p>
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

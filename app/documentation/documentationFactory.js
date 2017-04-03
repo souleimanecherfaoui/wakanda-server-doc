@@ -135,9 +135,101 @@ angular.module('wakanda-server-doc')
           name: 'Miscellaneous',
           url: '#/doc/miscellaneous',
           page: 'miscellaneous'
-        }
+        },
+        {
+          name: 'User Space',
+          url: '#/doc/userSpace',
+          page: 'userSpace',
+          children: [
+            {
+              name: 'Account Management',
+              url: '#/doc/userSpace/accountManagement',
+              parentPage: 'userSpace',
+              page: 'accountManagement',
+              children : [
+                {
+                  name: 'Profile',
+                  url: '#/doc/userSpace/accountManagement/profile',
+                  parentPage: 'accountManagement',
+                  page: 'profile'
+                },
+                {
+                  name: 'Change Password',
+                  url: '#/doc/userSpace/accountManagement/changePassword',
+                  parentPage: 'accountManagement',
+                  page: 'changePassword'
+                },  
+                {
+                  name: 'Billing',
+                  url: '#/doc/userSpace/accountManagement/billing',
+                  parentPage: 'accountManagement',
+                  page: 'billing'
+                },
+                {
+                  name: 'Tickets',
+                  url: '#/doc/userSpace/accountManagement/ticket',
+                  parentPage: 'accountManagement',
+                  page: 'ticket'
+                }                                            
+              ]
+            },
+
+            {
+              name: 'Cloud Application',
+              url: '#/doc/userSpace/cloudApplication',
+              parentPage: 'userSpace',
+              page: 'cloudApplication',
+              children:[
+                {
+                  name: 'Wakanda',
+                  url: '#/doc/userSpace/cloudApplication/cloud-wakanda',
+                  parentPage: 'cloudApplication',
+                  page: 'cloud-wakanda'
+                },
+                {
+                  name: 'RDS',
+                  url: '#/doc/userSpace/cloudApplication/cloud-rds',
+                  parentPage: 'userSpace',
+                  page: 'cloud-rds'
+                }
+              ]
+            },
+            {
+              name: 'On Premise Application',
+              url: '#/doc/userSpace/on-premise-application',
+              parentPage: 'userSpace',
+              page: 'on-premise-application'
+            },
+            {
+              name: 'Download',
+              url: '#/doc/userSpace/download',
+              parentPage: 'userSpace',
+              page: 'download'
+            },
+            {
+              name: 'Support',
+              url: '#/doc/userSpace/support',
+              parentPage: 'userSpace',
+              page: 'support'
+            }
+          ]
+        },
+        {
+          name: 'Deployment',
+          url: '#/doc/deployment',
+          page: 'deployment',
+          children: [
+            {
+              name: 'Cloud Deployment',
+              url: '#/doc/deployment/cloud-deployment',
+              parentPage: 'deployment',
+              page: 'cloud-deployment'
+            }
+          ]  
+        }    
       ];
     }
+    
 
     return {
       isAvailableDocPage: isAvailableDocPage,

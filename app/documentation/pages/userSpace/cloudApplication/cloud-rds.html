@@ -1,0 +1,142 @@
+<div class="">
+    <style>
+        .list>li {
+            padding-top: 10px;
+        }
+    </style>
+    <h1 id="cloud-instance">Cloud RDS</h1>
+    <div id="add-rds">
+        <div id="add-rds-header">
+            <h2>Add RDS group to your application view</h2>
+        </div>
+        <div id="add-rds-body">
+            <p>To add a RDS group to your application first goto <b> application's group list</b> and click on<b> Add 3rd-party DB</b> button</p>
+            <p><img src="./documentation/images/add_rds_group.png" alt="" style="width: 100%;"></p>
+            <p>then configure different options</p>
+            <p><img src="./documentation/images/create_rds_config.png" alt="" style="width: 100%;"></p>
+            <p>Finally click on <b>Validate</b> button. At this point your create rds group request are sent, you <b>must wait a few minute</b> to fully provisioned your instance.</p>
+            <p>The created RDS group are now list in <b> application's group list</b></p>
+            <p><img src="./documentation/images/application_group_list.png" alt="" style="width: 100%;"></p>
+        </div>
+    </div>
+    <div id="general-view">
+        <div id="general-view-header">
+            <h2>General view</h2>
+        </div>
+        <div>
+            <p>The general view gives you real-time used statistics of the memory and disk space usage.</p>
+            <p> This view also provides the database information for connecting your wakanda application to this database and the <b>Reload Service</b> button for reloading the RDS instance</p>
+            <p> for how to connect your wakanda application to external database got go <a href="http://doc.wakanda.org/home2.en.html#/MySQL-Connector-Pro/MySQL-Connector-Pro.100-1168858.en.html">doc-center</a></p>
+            <p><img src="./documentation/images/rds_general_information.png" alt="" style="width: 100%;"></p>
+        </div>
+    </div>
+    <div id="monitoring-view">
+        <div id="monitoring-view-header">
+            <h2>Monitoring view</h2>
+        </div>
+        <div id="monitoring-view-body">
+            <p>The monitoring view allows you to monitor the activity of your RDS instance, by charting the usage statistics of memory, CPU, storage, read/wirte IOPS, Database connections and network throughput.</p>
+            <p><img src="./documentation/images/rds-monitoring-charts.png" alt="" style="width: 100%;"></p>
+            <h3 id="graphs-time-frame">Graph’s time-frame</h3>
+            <p>You can select a time frame for your graphs by setting a display window as well as a starting date:</p>
+            <p><img src="./documentation/images/chart-time-frame.png" style="width: 100%;" /></p>
+            <h3 id="metrics">Metrics</h3>
+            <p>You can add new metrics to a graph simply by clicking on the <strong><code>+</code></strong> button </p>
+            <img src="./documentation/images/add_metric_button.png" alt="" style="width: 100%;">
+            <p>then selecting the metric you want from the list, and clicking on <strong><code>Add to graph</code></strong> button</p>
+            <img src="./documentation/images/add_metric_to_graph.png" style="width: 100%;" />
+            <p>You can also hide or show your selected metrics from the graph by clicking on them.</p>
+            <h3 id="deleteadd-graphs">Delete/add graphs</h3>
+            <p>The <code>x</code> button allows you to delete the graph from the monitoring view.</p>
+            <p>To add a new graph, click on the <strong><code>Add chart</code></strong> button</p>
+            <img src="./documentation/images/add_chart_button.png" style="width: 100%;" />
+            <p>the select the <b>metric</b>, <b>period</b> and <b>start date</b> and click on <strong><code>Confirm</code></strong> button</p>
+            <img src="./documentation/images/create_new_chat_model.png" style="width: 100%;" />
+        </div>
+    </div>
+    <div id="activity-view">
+        <div id="activity-view-header">
+            <h2>Activity view</h2>
+        </div>
+        <div id="activity-view-body">
+            <p>This view show you the recent operations made on this RDS instance by you or your collaborators sush as download log, reload, ...</p>
+            <p><img src="./documentation/images/rds_activities.png" style="width: 100%;" /></p>
+            <p>You can refresh list by clicking on <strong><code>refresh</code></strong> button.
+            </p>
+        </div>
+    </div>
+
+    <div id="profiles-view">
+        <div id="profiles-view-header">
+            <h2>profiles view</h2>
+        </div>
+        <div id="profiles-view-body">
+            <p>The profiles view offers you a way to work in a collaborative mode by creating groups, inviting users and managing their permissions.</p>
+            <p><img src="./documentation/images/rds_profiles_view.png" style="width: 100%;" /></p>
+            <h3 id="creating-a-group">Creating a group</h3>
+            <p>You can create a new group by clicking on the <strong><code>Add Group</code></strong> button</p>
+            <p><img src="./documentation/images/add_rds_profile.png" style="width: 100%;" /></p>
+            <div class="bs-callout bs-callout-info">
+                The <strong><code>Owner</code></strong> group is created automatically with every application. The only user it contains is the application’s owner.</a>
+            </div>
+            <p>The pop-up that shows up allows you to:</p>
+            <ul>
+                <li>Set a name for the group.</li>
+                <li>Type the emails of the collaborators in the <strong><code>Users</code></strong> section.</li>
+                <li>Set custom permissions for the group.</li>
+            </ul>
+            <p>Click on the <strong><code>save</code></strong> button to create the group</p>
+            <p><img src="./documentation/images/add_rds_profile_model.png" style="width: 100%;" /></p>
+            <h3 id="managing-users">Managing users</h3>
+            <p>On the users panel, you can add or remove collaborators from a selected group. To add a new user to a group, click on the <strong><code>Manage Users</code></strong> button or on the <strong><code>Add users to the group</code></strong> link
+                if the group does not contain any users yet.</p>
+            <p><img src="./documentation/images/manage_rds_profile_users.png" style="width: 100%;" /></p>
+            <p>Type in the user’s email and click on <strong><code>Invite</code></strong> or, if the user is also a collaborator in one of your other groups, select him/her from the shown list.</p>
+            <p><img src="./documentation/images/manage_rds_profile_users_model.png" style="width: 100%;" /></p>
+            <p>You can also delete a user from a group by clicking on the <strong><code>X</code></strong> button in the user panel or in the manage users view by deselecting him/her.</p>
+            <h3 id="configuring-group-permissions">Configuring group permissions</h3>
+            <p>You can configure group permissions by clicking on the <img class="inline" src="./documentation/images/manage_rds_permissions_button.png"> button.</p>
+            <p>A predefined list of permissions appears where you can select/deselect the permissions you want to attribute to the group and then save the changes.</p>
+            <h3 id="deleting-a-group">Deleting a group</h3>
+            <p>You delete a group by simply clicking on the <strong><code>X</code></strong> button next to the group name.</p>
+            <div class="bs-callout bs-callout-warning">
+                You should delete all users in a group before deleting it.</a>
+            </div>
+        </div>
+    </div>
+    <div id="database-view">
+        <div id="database-view-header">
+            <h2>Database view</h2>
+        </div>
+        <div id="database-view-body">
+            <p>The database view allows you to manage your RDS instance data, from scheduling your backups to exporting your remote data.</p>
+            <h3 id="data-backups">Data backups</h3>
+            <p>You can schedule and restore your backups in this view.</p>
+            <p>To schedule a backup you simply have to set the time you want to start your backups.</p>
+            <p><img src="./documentation/images/rds_backup_setting.png" style="width: 100%;" /></p>
+            <p>You can also find the list of completed backups</p>
+            <p><img src="./documentation/images/rds_backup_list.png" style="width: 100%;" /></p>
+            <p>Each row contains information about the backup made at that point in time. It includes the date of the backup, its state and the restore action that can be done on it.
+            </p>
+            <h3 id="import-and-export-data">Import and export Data</h3>
+            <p>You can easily manage your remote RDS data by importing and exporting your data in this view.</p>
+            <p>To import your data to your remote RDS instance, you can drag and drop the .sql file in the specified section or select it by clicking on <strong><code>Select File</code></strong> button.</p>
+            <p><img src="./documentation/images/rds_import.png" style="width: 100%;" /></p>
+            <p>Once the .sql file is selected, click on the <strong><code>Import Data</code></strong> button and your newly imported data will take effect.</p>
+            <p>To export your remote RDS data, click on the <strong><code>Export Database</code></strong> and the download should start shortly after.</p>
+            <p><img src="./documentation/images/rds_export.png" style="width: 100%;" /></p>
+        </div>
+    </div>
+    <div id="Logs-view">
+        <div id="Logs-view-header">
+            <h2>Logs view</h2>
+        </div>
+        <div id="Logs-view-body">
+            <p>The logs view allows you to list all your RDS instance logs.</p>
+            <p>In addition, You can either download the full logs file in your choice by clicking on <img class="inline" src="./documentation/images/rds_logs_download_button.png"> in actions column.</p>
+            <p><img src="./documentation/images/rds_logs.png" style="width: 100%;" /></p>
+        </div>
+    </div>
+
+    <doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>
+</div>

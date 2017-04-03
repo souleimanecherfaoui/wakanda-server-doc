@@ -10,6 +10,13 @@
           <a href="{{sublink.url}}">
             {{sublink.name}}
           </a>
+          <ul ng-if="showSubList2(link,sublink)" class="nav nav-sidebar">
+            <li ng-repeat="sublink2 in sublink.children" ng-class="{active: isLinkActive(sublink2)}">
+              <a href="{{sublink2.url}}">
+                {{sublink2.name}}
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </li>

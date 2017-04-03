@@ -1,0 +1,17 @@
+<style>
+    .list>li{
+        padding-top: 10px;
+    }
+</style>
+<h1 id="billing">Billing</h1>
+<p>This view centralizes all invoices as well as the payments that have been made. It consists of two parts: invoices and payments info.</p>
+<h2 id="myInvoices">My invoices</h2>
+<p>This part lists all invoices generated with their relative information. You will find among the information displayed the status of the invoice, the amount and the expected date of payment. You can also view your bills or download them as well as pay them in case the payment has failed.</p>
+<p><img src="./documentation/images/myInvoices.png" /></p><br>
+<h2 id="paymentInfo">Payment Infos</h2>
+<p>This section displays information about the payment method used for your account and the date of the next payment.
+It also offers the possibility to pay all your invoices whose payment has failed as well as the possibility to change your related paypal account</p>
+<p><img src="./documentation/images/paymentInfo.png" /></p><br>
+
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

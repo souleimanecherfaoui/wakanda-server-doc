@@ -1,0 +1,91 @@
+<style>
+    .list>li{
+        padding-top: 10px;
+    }
+</style>
+<h1 id="cloud-instance">Wakanda Group</h1>
+<h2 id="general-view">General view</h2>
+<p>The general view gives you real-time statistics of the memory and disk space usage. This view also provides a control panel to manage your app, as well as a log of the most recent operations performed.</p>
+<h3 id="stopstartreloadupgrade-your-application">Stop/Start/Reload/Upgrade your application</h3>
+<p>On the control panel you can manage the state of your remote application. You can whether start, stop or reload your application as much as you can also upgrade to the next plan.</p>
+<p><img src="./documentation/images/action-buttons.png" /></p>
+<h3 id="summary">Summary</h3>
+<p>The summary block displays information regarding memory’s and disk space’s current usage. It also provides a quick shortcut to the Git repository associated to your app and the version of your application’s wakanda server.</p>
+<p><img src="./documentation/images/summary.png" /></p>
+<h2 id="monitoring-view">Monitoring view</h2>
+<p>The monitoring view allows you to monitor the activity of your application, by charting the usage statistics of memory, storage and network throughput.</p>
+<h3 id="graphs-time-frame">Graph’s time-frame</h3>
+<p>You can select a time frame for your graphs by setting a display window as well as a starting date:</p>
+<p><img src="./documentation/images/time-frame.png" /></p>
+<h3 id="metrics">Metrics</h3>
+<p>You can add new metrics to a graph simply by clicking on the <strong><code>+</code></strong> button, selecting the metric you want from the list, and clicking on <strong><code>Add to graph</code></strong> button</p>
+<p><img src="./documentation/images/add-metric.png" /></p>
+<p>You can also hide or show your selected metrics from the graph by clicking on them.</p>
+<p><img src="./documentation/images/show-hide.gif" /></p>
+<h3 id="deleteadd-graphs">Delete/add graphs</h3>
+<p>The <code>x</code> button allows you to delete the graph from the monitoring view.</p>
+<p>To add a new graph, click on the <strong><code>Add chart</code></strong> button</p>
+<p><img src="./documentation/images/add-chart.png" /></p>
+<h2 id="recent-operations-view">Recent Operations View</h2>
+<p>The recent actions you or your collaborators have executed (update permissions, publish app, download logs ...) are displayed in this view.</p>
+<p><img src="./documentation/images/wakanda-recent-operations.png" /></p>
+<h2 id="profiles-view">Profiles view</h2>
+<p>The profiles view offers you a way to work in a collaborative mode by creating groups, inviting users and managing their permissions.</p>
+<h3 id="creating-a-group">Creating a group</h3>
+<p>You can create a new group by clicking on the <strong><code>Add Group</code></strong> button</p>
+<p><img src="./documentation/images/add-group.png" /></p>
+<div class="bs-callout bs-callout-info">
+    The <strong><code>Owner</code></strong> group is created automatically with every application. The only user it contains is the application’s owner.</a>
+</div>
+<p>The pop-up that shows up allows you to:</p>
+<ul>
+<li>Set a name for the group.</li>
+<li>Type the emails of the collaborators in the <strong><code>Users</code></strong> section.</li>
+<li>Set custom permissions for the group.</li>
+</ul>
+<p>Click on the <strong><code>save</code></strong> button to create the group</p>
+<p><img src="./documentation/images/permissions.png" /></p>
+<h3 id="managing-users">Managing users</h3>
+<p>On the users panel, you can add or remove collaborators from a selected group. To add a new user to a group, click on the <strong><code>Manage Users</code></strong> button or on the <strong><code>Add users to the group</code></strong> link if the group does not contain any users yet.</p>
+<p><img src="./documentation/images/manage-users.png" /></p>
+<p>Type in the user’s email and click on <strong><code>Invite</code></strong> or, if the user is also a collaborator in one of your other groups, select him/her from the shown list.</p>
+<p><img src="./documentation/images/manage-invite.png"/></p>
+<p>You can also delete a user from a group by clicking on the <strong><code>X</code></strong> button in the user panel or in the manage users view by deselecting him/her.</p>
+<h3 id="configuring-group-permissions">Configuring group permissions</h3>
+<p>You can configure group permissions by clicking on the <img class="inline" src="./documentation/images/19_permission_button.png"> button.</p>
+<p>A predefined list of permissions appears where you can select/deselect the permissions you want to attribute to the group and then save the changes.</p>
+<h3 id="deleting-a-group">Deleting a group</h3>
+<p>You delete a group by simply clicking on the <strong><code>X</code></strong> button next to the group name.</p>
+<div class="bs-callout bs-callout-warning">
+    You should delete all users in a group before deleting it.</a>
+</div>
+<h2 id="database-view">Database view</h2>
+<p>The database view allows you to manage your application’s data, from scheduling your backups to exporting your remote waData file.</p>
+<h3 id="data-backups">Data backups</h3>
+<p>You can schedule, download and restore your backups in this view.</p>
+<p>To schedule a backup you simply have to set the frequency and the time you want to start your full backups.</p>
+<p>The frequency of the incremental backups depend on the choice you have made.</p>
+<p><img src="./documentation/images/backup-settings.png"/></p>
+<p>There are three frequencies you can choose from:</p>
+<ul>
+<li><p><strong>Daily: a full backup of your application's data will occur every day at the time you have specified. An incremental backup is executed every hour.</strong> This frequency is suitable for applications in which data is critical and requires a fine level of restore points.</p></li>
+<li><p><strong>Weekly: a full backup of your application's data will occur every week at the day and time you have specified. An incremental backup is executed once every 6 hours.</strong> This type of frequency is a good compromise between the uptime of your application and the restore points available.</p></li>
+<li><p><strong>Monthly: a full backup of your application's data will occur every month at the date and time you have specified. An incremental backup is executed every 24 hours.</strong> If the uptime of your application is something you care about, this frequency is most suited for your application. The full backup is only performed once a month and lets you have daily restore points.</p></li>
+</ul>
+<p>You can also find the list of completed backups</p>
+<p><img src="./documentation/images/backups.png"/></p>
+<p>Each row contains information about the backup made at that point in time. It includes the date of the backup, its state, its type and the various actions that can be done on it (download backup file, restore it, or the download its verify report).</p>
+<h3 id="import-and-export-data">Import and export Data</h3>
+<p>You can easily manage your remote application’s data by importing and exporting your DataFolder in this view.</p>
+<p>To import your DataFolder to your remote application, you can drag and drop the DataFolder in a zip formats in the specified section or select it by clicking on <strong><code>Select File</code></strong> button.</p>
+<p><img src="./documentation/images/import.png"/></p>
+<p>Once the waData file is selected, click on the <strong><code>Import Data</code></strong> button and your newly imported data will take effect.</p>
+<p>To export your remote application waData file, click on the <strong><code>Export Database</code></strong> and the download should start shortly after.</p>
+<p><img src="./documentation/images/export.png"/></p>
+<h2 id="logs-view">Logs view</h2>
+<p>The logs view allows you to access your latest Wakanda Solution’s logs.</p>
+<p>In addition, You can either download the full logs files or delete them.</p>
+<p><img src="./documentation/images/logs.png"/></p>
+
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

@@ -1,0 +1,76 @@
+<h1 id="cloud-deployment">Cloud Deployment</h1>
+
+<h2 id="creating-your-first-application">Creating your first application</h2>
+<p>Once you have created an account in the <a target="_blank" href="https://console.wakanda.io/">Wakanda User Space</a> connect to the dashboard, click on the <strong><code>New Subscription</code></strong> button to open the application creation wizard.</p>
+<p><img src="./documentation/images/new-subscription.png" /></p>
+<p>Start by choosing a plan from the Production Environment suggestions. In our example, we will be creating a free application. To proceed, click on the <strong><code>Free application button</code></strong>.</p>
+<p><img src="./documentation/images/free-application.png" /></p>
+<p>By default, your application will be created in the US. If you prefer a different region, you can select it from the list.</p>
+<p><img src="./documentation/images/region.png" /></p>
+<div class="bs-callout bs-callout-info">
+    As of the moment, only the US region is available</a>.
+</div>
+<p>Choose a valid application name:</p>
+<p><img src="./documentation/images/domain.png" /></p>
+<p>Optionally, you can add custom domains to your application’s configuration.</p>
+<p><img src="./documentation/images/custom-domain.png" /></p>
+<p>You are also invited to provide your profile’s information</p>
+<p><img src="./documentation/images/profile.png" /></p>
+<div class="bs-callout bs-callout-warning">
+    Before proceeding to the next step, all the required fields must be filled.
+</div>
+<p>Finally you must agree to our <a target=_blank href="https://console.wakanda.io/#/termsOfService">Terms of Service</a> before proceeding to the payment panel.</p>
+<p><img src="./documentation/images/Tos.png" /></p>
+<div class="bs-callout bs-callout-info">
+    Even if you have chosen a free trial plan, you need to validate your Paypal account.</a>.
+</div>
+<h2 id="publishing-and-updating-your-application">Publishing &amp; updating your application</h2>
+<h3 id="using-wakanda-studio">Using Wakanda Studio</h3>
+<p>In order to deploy your solution to your cloud application using Wakanda Studio follow these steps :</p>
+<h4 id="create-a-repository">Create a repository</h4>
+<p>From the solution explorer, click on <img class="inline" src="./documentation/images/git-shortcut.png" /> to open Git. Then, click on <strong><code>Create Git Repository</code></strong>.</p>
+<h4 id="commit-your-changes">Commit your changes</h4>
+<p>Add changes to your stage and commit:</p>
+<p><img src="./documentation/images/git-commit.png" /></p>
+<h4 id="add-a-remote-repository">Add a remote repository</h4>
+<p>Retrieve your remote repository URL from <a target=_blank href="https://console.wakanda.io">Wakanda Cloud</a></p>
+<p><img src="./documentation/images/git-wakanda-cloud.png" /></p>
+<h4 id="setup">Setup</h4>
+<p>Click on <img class="inline" src="./documentation/images/git-remote-repositories.png" /> to open the remote repositories panel.</p>
+<p>And setup your remote settings:</p>
+<p><img src="./documentation/images/git-add-remote.png" /></p>
+<div class="bs-callout bs-callout-info">
+    <strong>IMPORTANT</strong>: the password will be saved as plain text in the <code>.git/config</code> file. You can however leave the Username and Password fields empty and cache your password in Git.</a>.
+</div>
+<button data-toggle="collapse" data-target="#cache-password" class="btn">Show/Hide Cache your password in git</button>
+<div id="cache-password" class="collapse"><br>
+
+    <p><strong><em>Mac OS X</em></strong></p>
+    <pre><code>git config --global credential.helper osxkeychain</code></pre>
+    <p><a target=_blank href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-mac">More info »</a></p>
+    <p><strong><em>Windows</em></strong></p>
+    <pre><code>git config --global credential.helper wincred</code></pre>
+    <p><a target=_blank href="https://help.github.com/articles/caching-your-github-password-in-git/#platform-windows">More info »</a></p>
+</div>    
+<h4 id="deploy">Deploy</h4>
+<p>Click on <code><strong>Deploy</strong></code> from the Studio toolbar:</p>
+<p><img src="./documentation/images/toolbar-deploy.png" /></p>
+<p>You can now push, for example, on your <code><strong>production</strong></code> branch:</p>
+<p><img src="./documentation/images/deploy-your-project.png" /></p>
+<h3 id="using-command-line">Using Command line</h3>
+<p>Push your solution to the remote repository by using the following command</p>
+<pre><code> $ git push https://[my-application-name].us-git.wak-apps.com master</code></pre>
+<div class="bs-callout bs-callout-info">
+    If your local repository is using a branch name other than <code>master</code>, you must use the following command to push your solution to the remote repository:</a>
+    <pre><code>$ git push https://[my-application-name].us-git.wak-apps.com [local-branch-name]:master</code></pre>
+</div>
+<h2 id="clone-from-your-cloud-application">Clone From your Cloud Application</h2>
+<h3 id="using-wakanda-studio-1">Using Wakanda Studio</h3>
+<p>Open The Git Panel and select your Remote Git Repository, then click on <code><strong>Pull:</code></strong></p>
+<p><img src="./documentation/images/pull.png" /></p>
+<h3 id="using-the-command-line">Using the command line</h3>
+<p>Clone your application from your Cloud remote repository by using the following command</p>
+<pre><code>$ git clone https://[my-application-name].us-git.wak-apps.com</code></pre>
+
+
+<doc-pagination page="{{currentPage}}" subpage="{{currentSubPage}}"></doc-pagination>

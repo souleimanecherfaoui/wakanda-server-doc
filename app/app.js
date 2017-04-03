@@ -28,6 +28,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         return 'documentation/pages/' + $stateParams.page + '/' + $stateParams.subpage +'.html';
       },
       controller: 'documentationController'
+    })
+    .state('documentationSubPage2', {
+      url: '/doc/{page}/{subpage}/{subpage2}?scrollTo=',
+      templateUrl: function ($stateParams) {
+        return 'documentation/pages/' + $stateParams.page + '/' + $stateParams.subpage + '/' + $stateParams.subpage2 +'.html';
+      },
+      controller: 'documentationController'
     });
 });
 
